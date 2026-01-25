@@ -1,0 +1,11 @@
+:root {
+  --primary-green: #10b981;
+  /* --secondary-color: #f39c12;
+  --bg-color: #ffffff;
+  --text-color: #333333; */
+
+  --main-font: 'Inter', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+
+  --border-radius: 8px;
+}
