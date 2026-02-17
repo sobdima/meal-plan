@@ -1,0 +1,8 @@
+body {
+  background-color: var(--color-bg-main);
+}
+
+#root {
+  /* max-width: 1024px; */
+  margin: 0 auto;
+}

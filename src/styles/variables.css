@@ -1,11 +1,22 @@
 :root {
-  --primary-green: #10b981;
-  /* --secondary-color: #f39c12;
-  --bg-color: #ffffff;
-  --text-color: #333333; */
+  /* Brand colors */
+  --color-primary: #10b981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #ecfdf5;
+  --color-border: #e2e8f0;
 
-  --main-font: 'Inter', sans-serif;
-  --heading-font: 'Montserrat', sans-serif;
+  /* Status colors */
+  --color-danger: #f43f5e;
+  --color-warning: #fbbf24;
 
-  --border-radius: 8px;
+  /* Neutral colors */
+  --color-white: #ffffff;
+  --color-bg-main: #f8fafc;
+  --color-gray: #f1f5f9;
+  --color-gray-muted: #94a3b8;
+  --color-text-main: #1e293b;
+  --color-text-muted: #64748b;
+
+  /* Specific UI */
+  --hover: #0f172a;
 }
