@@ -14,24 +14,26 @@ export function Header() {
 
   return (
     <header className="header">
-      <div className="logo-container">
-        <h1 className="logo-title">
-          <LogoIcon />
-          MealPlan
-        </h1>
-      </div>
+      <div className="header-container">
+        <div className="logo-container">
+          <h1 className="logo-title">
+            <LogoIcon />
+            MealPlan
+          </h1>
+        </div>
 
-      <div className="header-buttons">
-        <Button
-          text={<AddButtonIcon />}
-          onClick={handleAdd}
-          className="btn-add"
-        />
-        <Button
-          text="Generate"
-          onClick={handleGenerate}
-          className="btn-generate"
-        />
+        <div className="header-buttons">
+          <Button
+            text={<AddButtonIcon />}
+            onClick={handleAdd}
+            className="btn-add"
+          />
+          <Button
+            text="Generate"
+            onClick={handleGenerate}
+            className="btn-generate"
+          />
+        </div>
       </div>
     </header>
   );
