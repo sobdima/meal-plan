@@ -54,7 +54,7 @@
   color: #718096;
 }
 
-/* Стили контейнеров */
+/* Container styles */
 .placeholder-container {
   min-height: 200px;
   display: flex;
@@ -74,7 +74,6 @@
   background-color: #ffffff;
   border-radius: 16px;
   border: 1px solid #edf2f7;
-  /* Легкая тень как на втором скриншоте */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
@@ -83,7 +82,7 @@
   font-size: 16px;
 }
 
-/* Стили для пустого списка покупок */
+/* Styles for an empty shopping list */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -110,9 +109,10 @@
   font-size: 15px;
 }
 
-/* Адаптивность */
+/* Responsive */
 @media (max-width: 1024px) {
   .main-content {
+    padding: 24px 16px;
     flex-direction: column;
   }
 
