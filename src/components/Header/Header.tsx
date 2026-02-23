@@ -3,11 +3,11 @@ import { Button } from '@/components/Button/Button';
 import { LogoIcon } from '../Icons/LogoIcon';
 import { AddButtonIcon } from '../Icons/AddButtonIcon';
 
-export function Header() {
-  const handleGenerate = () => {
-    console.log('Генерируем план питания!');
-  };
+interface HeaderProps {
+  generateIds: () => void;
+}
 
+export function Header({ generateIds }: HeaderProps) {
   const handleAdd = () => {
     console.log('Добавляем новый элемент!');
   };
@@ -30,7 +30,7 @@ export function Header() {
           />
           <Button
             text="Generate"
-            onClick={handleGenerate}
+            onClick={generateIds}
             className="btn-generate"
           />
         </div>

@@ -1,0 +1,114 @@
+[
+  {
+    "id": "d1",
+    "name": "Oatmeal Pancakes",
+    "servings": 2,
+    "prepTimeMin": 20,
+    "calories": 320,
+    "tags": ["breakfast", "vegetarian"],
+    "ingredients": [
+      { "name": "oats", "quantity": 100, "unit": "g" },
+      { "name": "milk", "quantity": 200, "unit": "ml" },
+      { "name": "egg", "quantity": 1, "unit": "pc" },
+      { "name": "banana", "quantity": 1, "unit": "pc" }
+    ]
+  },
+  {
+    "id": "d2",
+    "name": "Chicken Caesar Salad",
+    "servings": 2,
+    "prepTimeMin": 15,
+    "calories": 450,
+    "tags": ["lunch", "gluten-free"],
+    "ingredients": [
+      { "name": "chicken breast", "quantity": 300, "unit": "g" },
+      { "name": "romaine lettuce", "quantity": 200, "unit": "g" },
+      { "name": "parmesan", "quantity": 30, "unit": "g" },
+      { "name": "croutons", "quantity": 50, "unit": "g" }
+    ]
+  },
+  {
+    "id": "d3",
+    "name": "Spaghetti Bolognese",
+    "servings": 4,
+    "prepTimeMin": 45,
+    "calories": 600,
+    "tags": ["dinner"],
+    "ingredients": [
+      { "name": "spaghetti", "quantity": 400, "unit": "g" },
+      { "name": "ground beef", "quantity": 500, "unit": "g" },
+      { "name": "tomato sauce", "quantity": 400, "unit": "ml" },
+      { "name": "onion", "quantity": 1, "unit": "pc" }
+    ]
+  },
+  {
+    "id": "d4",
+    "name": "Vegetable Stir-fry",
+    "servings": 3,
+    "prepTimeMin": 25,
+    "calories": 280,
+    "tags": ["vegan", "quick"],
+    "ingredients": [
+      { "name": "broccoli", "quantity": 200, "unit": "g" },
+      { "name": "carrot", "quantity": 150, "unit": "g" },
+      { "name": "bell pepper", "quantity": 1, "unit": "pc" },
+      { "name": "soy sauce", "quantity": 30, "unit": "ml" }
+    ]
+  },
+  {
+    "id": "d5",
+    "name": "Beef Stew",
+    "servings": 4,
+    "prepTimeMin": 120,
+    "calories": 700,
+    "tags": ["dinner", "comfort"],
+    "ingredients": [
+      { "name": "beef chuck", "quantity": 800, "unit": "g" },
+      { "name": "potato", "quantity": 400, "unit": "g" },
+      { "name": "carrot", "quantity": 200, "unit": "g" },
+      { "name": "beef broth", "quantity": 800, "unit": "ml" }
+    ]
+  },
+  {
+    "id": "d6",
+    "name": "Avocado Toast",
+    "servings": 1,
+    "prepTimeMin": 10,
+    "calories": 350,
+    "tags": ["breakfast", "vegan"],
+    "ingredients": [
+      { "name": "bread slice", "quantity": 2, "unit": "pc" },
+      { "name": "avocado", "quantity": 1, "unit": "pc" },
+      { "name": "lemon", "quantity": 0.5, "unit": "pc" },
+      { "name": "salt", "quantity": 1, "unit": "tsp" }
+    ]
+  },
+  {
+    "id": "d7",
+    "name": "Greek Yogurt Parfait",
+    "servings": 1,
+    "prepTimeMin": 5,
+    "calories": 220,
+    "tags": ["breakfast", "snack"],
+    "ingredients": [
+      { "name": "greek yogurt", "quantity": 200, "unit": "g" },
+      { "name": "granola", "quantity": 50, "unit": "g" },
+      { "name": "berries", "quantity": 100, "unit": "g" },
+      { "name": "honey", "quantity": 10, "unit": "g" }
+    ]
+  },
+  {
+    "id": "d8",
+    "name": "Quinoa Salad",
+    "servings": 2,
+    "prepTimeMin": 20,
+    "calories": 360,
+    "tags": ["lunch", "gluten-free", "vegetarian"],
+    "ingredients": [
+      { "name": "quinoa", "quantity": 150, "unit": "g" },
+      { "name": "cucumber", "quantity": 1, "unit": "pc" },
+      { "name": "feta", "quantity": 80, "unit": "g" },
+      { "name": "olive oil", "quantity": 20, "unit": "ml" }
+    ]
+  }
+]
