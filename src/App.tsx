@@ -5,18 +5,25 @@ import '@/utils/dishUtils';
 import { getRandomDishesId } from '@/utils/dishUtils';
 
 function App() {
-  const [selectedDishes, setSelectedDishes] = useState<string[]>([]);
+  const [selectedDishes, setSelectedDishes] = useState<string[]>(() => {
+    try {
+      const saved = localStorage.getItem('selectedDishesId');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      console.error('Ошибка парсинга:', e);
+      return [];
+    }
+  });
 
   const handleGenerateIds = () => {
     const dishes = getRandomDishesId();
     setSelectedDishes(dishes);
   };
-  console.log(selectedDishes);
 
   return (
     <>
       <Header generateIds={handleGenerateIds} />
-      <Main />
+      <Main dishes={selectedDishes} />
     </>
   );
 }
