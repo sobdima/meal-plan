@@ -1,19 +1,18 @@
-import './Main.css';
 import { Section } from '@/components/Section/Section';
-import Placeholder from '@/components/Placeholder/Placeholder';
-import ShoppingBagIcon from '@/components/Icons/ShoppingBagIcon';
-import { DishCard } from '@/components/DishCard/DishCard';
-import type { Dish } from '@/types/dish';
-import dishesData from '@/data/dishes.json';
+import './Main.css';
+import { Button } from '@/components/Button/Button';
+import { MenuContent } from '@/components/Content/MenuContent/MenuContent';
+import { ShoppingContent } from '@/components/Content/ShoppingContent/ShoppingContent';
+import { usePersistedShoppingList } from '@/hooks/usePersistedShoppingList';
 
 interface MainProps {
-  dishes: string[];
+  dishIds: string[];
 }
 
-const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const allDishes = dishesData as Dish[];
+export function Main({ dishIds }: MainProps) {
+  const hasDishes = dishIds.length > 0;
+  const { items, confirm } = usePersistedShoppingList(dishIds);
 
-function Main({ dishes }: MainProps) {
   return (
     <main className="main-content">
       <Section
@@ -21,49 +20,28 @@ function Main({ dishes }: MainProps) {
         title="Menu for the week"
         indicatorColor="green"
         rightElement={
-          <span className="dish-count">Dishes: {dishes.length}</span>
+          <span className="dish-count">Dishes: {dishIds.length}</span>
+        }
+        bottomElement={
+          hasDishes && (
+            <Button
+              text="Create a shopping list"
+              className="btn-create"
+              onClick={() => confirm()}
+            />
+          )
         }
       >
-        {dishes.length > 0 ? (
-          dishes.map((dishId, index) => {
-            const dish = allDishes.find((d) => d.id === dishId);
-            if (!dish) return null;
-
-            return (
-              <DishCard
-                key={dishId}
-                day={DAYS_OF_WEEK[index]}
-                dishTitle={dish.name}
-                amount={dish.ingredients.length}
-              />
-            );
-          })
-        ) : (
-          <Placeholder variant="dashed">
-            <p className="placeholder-text">
-              Click the "Generate" button to create a plan
-            </p>
-          </Placeholder>
-        )}
+        <MenuContent dishIds={dishIds} />
       </Section>
 
       <Section
-        sectionType="grocery-list"
-        title="Grocery list"
+        sectionType="shopping-list"
+        title="Shopping List"
         indicatorColor="yellow"
       >
-        <Placeholder variant="card">
-          <div className="empty-state">
-            <ShoppingBagIcon />
-            <p className="empty-state-title">The list is empty.</p>
-            <p className="empty-state-subtitle">
-              Please confirm the menu first.
-            </p>
-          </div>
-        </Placeholder>
+        <ShoppingContent items={items} />
       </Section>
     </main>
   );
 }
-
-export default Main;

@@ -1,31 +1,23 @@
 import { useState } from 'react';
 import { Header } from './components/Header/Header';
-import Main from './pages/Main';
-import '@/utils/dishUtils';
-import { getRandomDishesId } from '@/utils/dishUtils';
+import { Main } from './pages/Main';
+import '@/utils/dishIdsUtils';
 
-function App() {
-  const [selectedDishes, setSelectedDishes] = useState<string[]>(() => {
+export function App() {
+  const [dishIds, setDishIds] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('selectedDishesId');
+      const saved = localStorage.getItem('dishIds');
       return saved ? JSON.parse(saved) : [];
     } catch (e) {
-      console.error('Ошибка парсинга:', e);
+      console.error('Parsing error:', e);
       return [];
     }
   });
 
-  const handleGenerateIds = () => {
-    const dishes = getRandomDishesId();
-    setSelectedDishes(dishes);
-  };
-
   return (
     <>
-      <Header generateIds={handleGenerateIds} />
-      <Main dishes={selectedDishes} />
+      <Header onGenerate={setDishIds} onClear={() => setDishIds([])} />
+      <Main dishIds={dishIds} />
     </>
   );
 }
-
-export default App;

@@ -1,15 +1,38 @@
-import './Header.css';
-import { Button } from '@/components/Button/Button';
-import { LogoIcon } from '../Icons/LogoIcon';
+import { getRandomDishesId } from '@/utils/dishIdsUtils';
+import { Button } from '../Button/Button';
 import { AddButtonIcon } from '../Icons/AddButtonIcon';
+import { LogoIcon } from '../Icons/LogoIcon';
+import './Header.css';
+import { useState } from 'react';
+import { ClearConfirm } from '../Modals/ConfirmClearMenuModal/ConfirmClearMenuModal';
+import { hasStoredDishIds } from '@/utils/clearUtils';
+import { Modal } from '../Modals/ModalWrapper/ModalWrapper';
 
 interface HeaderProps {
-  generateIds: () => void;
+  onGenerate: (ids: string[]) => void;
+  onClear: () => void;
 }
 
-export function Header({ generateIds }: HeaderProps) {
-  const handleAdd = () => {
-    console.log('Добавляем новый элемент!');
+export function Header({ onGenerate, onClear }: HeaderProps) {
+  const [showClearModal, setShowClearModal] = useState(false);
+
+  const handleGenerate = () => {
+    const newIds = getRandomDishesId();
+    onGenerate(newIds);
+  };
+
+  const handleClearClick = () => {
+    setShowClearModal(true);
+  };
+
+  const handleConfirm = () => {
+    localStorage.removeItem('dishIds');
+    onClear();
+    setShowClearModal(false);
+  };
+
+  const handleCancel = () => {
+    setShowClearModal(false);
   };
 
   return (
@@ -25,15 +48,30 @@ export function Header({ generateIds }: HeaderProps) {
         <div className="header-buttons">
           <Button
             text={<AddButtonIcon />}
-            onClick={handleAdd}
+            onClick={() => alert('Add')}
             className="btn-add"
           />
           <Button
             text="Generate"
-            onClick={generateIds}
+            onClick={handleGenerate}
             className="btn-generate"
           />
+          <Button
+            text="Clear"
+            onClick={handleClearClick}
+            className="btn-clear"
+          />
         </div>
+
+        {showClearModal && (
+          <Modal onClose={handleCancel}>
+            <ClearConfirm
+              hasData={hasStoredDishIds()}
+              onConfirm={handleConfirm}
+              onCancel={handleCancel}
+            />
+          </Modal>
+        )}
       </div>
     </header>
   );

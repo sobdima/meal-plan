@@ -1,4 +1,4 @@
-import dishes from '@/data/dishes.json';
+import dishesData from '@/data/dishes.json';
 
 function shuffleDishes<T>(array: T[]): T[] {
   const copyArr = array.slice();
@@ -10,12 +10,10 @@ function shuffleDishes<T>(array: T[]): T[] {
 }
 
 export function getRandomDishesId(): string[] {
-  const selected = shuffleDishes(dishes)
+  const selected = shuffleDishes(dishesData)
     .slice(0, 7)
     .map((dish) => dish.id);
 
-  localStorage.setItem('selectedDishesId', JSON.stringify(selected));
+  localStorage.setItem('dishIds', JSON.stringify(selected));
   return selected;
 }
-
-//console.log(getRandomDishes());

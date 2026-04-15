@@ -9,3 +9,10 @@ export interface Dish {
   name: string;
   ingredients: Ingredient[];
 }
+
+export interface ShoppingItem {
+  name: string;
+  quantity: number;
+  unit: string;
+  done?: boolean;
+}

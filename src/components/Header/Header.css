@@ -46,3 +46,19 @@
 .btn-add:hover {
   background-color: var(--color-border);
 }
+
+.btn-clear {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn-clear:hover {
+  background: #ff5252;
+}

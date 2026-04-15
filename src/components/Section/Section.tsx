@@ -5,6 +5,7 @@ interface SectionProps {
   title: string;
   indicatorColor: 'green' | 'yellow';
   rightElement?: ReactNode;
+  bottomElement?: ReactNode;
   children: ReactNode;
 }
 
@@ -13,6 +14,7 @@ export function Section({
   title,
   indicatorColor,
   rightElement,
+  bottomElement,
   children,
 }: SectionProps) {
   return (
@@ -25,6 +27,7 @@ export function Section({
         {rightElement && <div className="section-right">{rightElement}</div>}
       </div>
       <div className="section-content">{children}</div>
+      {bottomElement && <div className="section-bottom">{bottomElement}</div>}
     </section>
   );
 }
